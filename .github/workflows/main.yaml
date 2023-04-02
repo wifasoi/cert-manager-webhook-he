@@ -49,7 +49,7 @@ jobs:
     with:
       event_name: ${{ github.event_name }}
     secrets: inherit
-    uses: ${{ github.repository }}/.github/workflows/docker.yaml@master
+    uses: ./.github/workflows/docker.yaml@master
 
   helm:
     needs: [changes,docker]
@@ -58,4 +58,4 @@ jobs:
     with:
       event_name: ${{ github.event_name }}
     secrets: inherit
-    uses: ${{ github.repository }}/.github/workflows/helm.yaml@master
+    uses: ./.github/workflows/helm.yaml@master
